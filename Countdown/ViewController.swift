@@ -9,17 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let countdownController = CountdownController()
+
+    @IBOutlet weak var countdownLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        self.countdownLabel.text = CountdownController.placeholder
+        countdownController.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
 
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 
 }
 
+extension ViewController: CountDownControllerDelegate {
+    func updateCountdown(countdownString: String) {
+        self.countdownLabel.text = countdownString
+    }
+}
