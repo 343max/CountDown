@@ -11,6 +11,7 @@ import Foundation
 protocol CountDownControllerDelegate: class {
     func updateCountdown(countdownString: String)
     func countdownStateChanged(newState: CountdownController.State)
+    func countdownEvent(event: CountdownController.Event)
 }
 
 class CountdownController {
@@ -66,7 +67,7 @@ class CountdownController {
     }
 
     @objc func tick(timer: NSTimer) {
-        let timeLeft = endDate != nil ? endDate! - NSDate() : 0.0
+        let timeLeft = endDate != nil ? round(endDate! - NSDate()) : 0.0
 
         if timeLeft <= 0.0 {
             stop()
@@ -74,5 +75,36 @@ class CountdownController {
         }
 
         text = timeLeft.formatedString(includeSeconds: true)
+
+        tick(timeLeft: Int(timeLeft))
+    }
+}
+
+extension CountdownController {
+    enum Event {
+        case Vote
+        case NearlyOutOfTime
+    }
+
+    typealias TimeRange = Range<Int>
+
+    struct Times {
+        static let Vote: TimeRange = 28...30
+        static let NearlyOutOfTime: TimeRange = 0...10
+    }
+
+    func tick(timeLeft timeLeft: Int) {
+        let event: Event?
+        if Times.Vote.contains(timeLeft) {
+            event = .Vote
+        } else if Times.NearlyOutOfTime.contains(timeLeft) {
+            event = .NearlyOutOfTime
+        } else {
+            event = nil
+        }
+
+        if let event = event {
+            delegate?.countdownEvent(event)
+        }
     }
 }

@@ -88,4 +88,23 @@ extension ViewController: CountDownControllerDelegate {
         stopButton.hidden = !hideStart
         extendButton.hidden = !hideStart
     }
+
+    func countdownEvent(event: CountdownController.Event) {
+        let color: UIColor
+        switch event {
+        case .NearlyOutOfTime:
+            color = UIColor.redColor()
+        case .Vote:
+            color = UIColor.orangeColor()
+        }
+
+        let initialColor = view.backgroundColor
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.view.backgroundColor = color
+            }) { (completed) -> Void in
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    self.view.backgroundColor = initialColor
+                })
+        }
+    }
 }
