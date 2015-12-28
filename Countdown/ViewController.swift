@@ -29,6 +29,14 @@ class ViewController: UIViewController {
             contentView.translatesAutoresizingMaskIntoConstraints = true
         }
 
+        let leftGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("reduceTimeSwipe:"))
+        leftGestureRecognizer.direction = .Left
+        scrollView.addGestureRecognizer(leftGestureRecognizer)
+
+        let rightGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("extendTimeSwipe:"))
+        rightGestureRecognizer.direction = .Right
+        scrollView.addGestureRecognizer(rightGestureRecognizer)
+
         scrollView.pagingEnabled = true
 
         layout()
@@ -58,6 +66,20 @@ class ViewController: UIViewController {
 }
 
 extension ViewController {
+    @objc func reduceTimeSwipe(gestureRecognizer: UIGestureRecognizer) {
+        if countdownController.state == .Counting {
+            countdownController.extend(-15)
+        }
+    }
+
+    @objc func extendTimeSwipe(gestureRecognizer: UIGestureRecognizer) {
+        if countdownController.state == .Counting {
+            countdownController.extend(15)
+        }
+    }
+}
+
+extension ViewController {
     func hidePannel() {
         scrollView.setContentOffset(CGPoint.zero, animated: true)
     }
@@ -73,7 +95,7 @@ extension ViewController {
     }
 
     @IBAction func tappedExtend(sender: AnyObject) {
-        countdownController.extend()
+        countdownController.extend(60)
     }
 }
 

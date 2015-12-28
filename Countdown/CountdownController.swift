@@ -20,7 +20,7 @@ class CountdownController {
         case Idle
     }
 
-    static let placeholder = "WMR"
+    static let placeholder = "WMR #99"
     static let duration = NSTimeInterval(5 * 60)
     var endDate: NSDate? {
         didSet {
@@ -61,8 +61,8 @@ class CountdownController {
         text = CountdownController.placeholder
     }
 
-    func extend() {
-        endDate = endDate! + 60
+    func extend(time: NSTimeInterval) {
+        endDate = endDate! + time
         tick(timer!)
     }
 
