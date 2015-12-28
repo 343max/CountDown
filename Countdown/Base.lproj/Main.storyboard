@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -34,9 +35,9 @@
                                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KCK-Ib-g9Y">
                                                 <rect key="frame" x="35" y="180" width="500" height="200"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4t-mN-O58" customClass="RoundButton" customModule="Countdown" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4t-mN-O58" customClass="RoundButton" customModule="Countdown" customModuleProvider="target">
                                                         <rect key="frame" x="150" y="0.0" width="200" height="200"/>
-                                                        <color key="backgroundColor" white="1" alpha="0.10877574573863637" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.25108753547272727" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="U4t-mN-O58" secondAttribute="height" multiplier="1:1" id="2q2-jh-VTA"/>
                                                         </constraints>
@@ -46,9 +47,9 @@
                                                             <action selector="tappedStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QbH-p8-pH1"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d21-Mw-QLa" customClass="RoundButton" customModule="Countdown" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d21-Mw-QLa" customClass="RoundButton" customModule="Countdown" customModuleProvider="target">
                                                         <rect key="frame" x="300" y="0.0" width="200" height="200"/>
-                                                        <color key="backgroundColor" white="1" alpha="0.1087757457" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.25108753547272727" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="d21-Mw-QLa" secondAttribute="height" multiplier="1:1" id="ap3-Qv-FWX"/>
                                                         </constraints>
@@ -60,9 +61,9 @@
                                                             <action selector="tappedStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0J6-mY-3Xg"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRW-Hi-IlJ" customClass="RoundButton" customModule="Countdown" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRW-Hi-IlJ" customClass="RoundButton" customModule="Countdown" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                                        <color key="backgroundColor" white="1" alpha="0.1087757457" colorSpace="calibratedWhite"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.25108753547272727" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="xRW-Hi-IlJ" secondAttribute="height" multiplier="1:1" id="o6c-X6-hbk"/>
                                                         </constraints>
@@ -96,7 +97,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.0" green="1" blue="0.042500058203223112" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="KCK-Ib-g9Y" firstAttribute="centerY" secondItem="3K6-cR-QGX" secondAttribute="centerY" id="UOQ-wf-Wex"/>
+                                            <constraint firstItem="KCK-Ib-g9Y" firstAttribute="centerY" secondItem="3K6-cR-QGX" secondAttribute="centerY" multiplier="1.6" id="UOQ-wf-Wex"/>
                                             <constraint firstItem="KCK-Ib-g9Y" firstAttribute="centerX" secondItem="3K6-cR-QGX" secondAttribute="centerX" id="pea-8D-CIK"/>
                                         </constraints>
                                     </view>
