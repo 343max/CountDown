@@ -105,10 +105,15 @@ extension ViewController: CountDownControllerDelegate {
     }
 
     func countdownStateChanged(newState: CountdownController.State) {
-        let hideStart = newState != .Idle
-        startButton.hidden = hideStart
-        stopButton.hidden = !hideStart
-        extendButton.hidden = !hideStart
+        let delaySeconds = scrollView.contentOffset.y == 0.0 ? 0.0 : 0.2
+
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delaySeconds * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) { [weak self] in
+            let hideStart = newState != .Idle
+            self?.startButton.hidden = hideStart
+            self?.stopButton.hidden = !hideStart
+            self?.extendButton.hidden = !hideStart
+        }
     }
 
     func countdownEvent(event: CountdownController.Event) {
