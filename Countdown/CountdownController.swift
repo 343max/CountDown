@@ -20,9 +20,10 @@ class CountdownController {
 
     weak var delegate: CountDownControllerDelegate?
 
-    func reset() {
+    func start() {
         endDate = NSDate(timeIntervalSinceNow: CountdownController.duration)
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("tick:"), userInfo: nil, repeats: true)
+        tick(timer!)
     }
 
     func stop() {

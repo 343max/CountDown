@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB4749701C3198EC002DDBA4 /* UIFont+Monospaced.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB47496F1C3198EC002DDBA4 /* UIFont+Monospaced.swift */; };
+		BB7AC6E41C31942000548F03 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7AC6E31C31942000548F03 /* RoundButton.swift */; };
 		BB976C3E1C318C0B005DDFB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB976C3D1C318C0B005DDFB6 /* AppDelegate.swift */; };
 		BB976C401C318C0B005DDFB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB976C3F1C318C0B005DDFB6 /* ViewController.swift */; };
 		BB976C431C318C0B005DDFB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB976C411C318C0B005DDFB6 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB47496F1C3198EC002DDBA4 /* UIFont+Monospaced.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Monospaced.swift"; sourceTree = "<group>"; };
+		BB7AC6E31C31942000548F03 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		BB976C3A1C318C0B005DDFB6 /* Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB976C3D1C318C0B005DDFB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB976C3F1C318C0B005DDFB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 				BB976C4F1C318D49005DDFB6 /* CountdownController.swift */,
 				BB976C511C318FDC005DDFB6 /* NSDate+Swift.swift */,
 				BB976C531C318FEB005DDFB6 /* NSTimerInterval+String.swift */,
+				BB47496F1C3198EC002DDBA4 /* UIFont+Monospaced.swift */,
+				BB7AC6E31C31942000548F03 /* RoundButton.swift */,
 			);
 			path = Countdown;
 			sourceTree = "<group>";
@@ -144,6 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB4749701C3198EC002DDBA4 /* UIFont+Monospaced.swift in Sources */,
+				BB7AC6E41C31942000548F03 /* RoundButton.swift in Sources */,
 				BB976C541C318FEB005DDFB6 /* NSTimerInterval+String.swift in Sources */,
 				BB976C521C318FDC005DDFB6 /* NSDate+Swift.swift in Sources */,
 				BB976C401C318C0B005DDFB6 /* ViewController.swift in Sources */,
@@ -298,6 +306,7 @@
 				BB976C4E1C318C0B005DDFB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,25 +20,89 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1nS-jv-Utn">
-                                <rect key="frame" x="120" y="180.5" width="360" height="239"/>
+                                <rect key="frame" x="120" y="180" width="360" height="239"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="200"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="URG-G8-sc8">
+                                <rect key="frame" x="20" y="0.0" width="560" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3K6-cR-QGX">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="600"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KCK-Ib-g9Y">
+                                                <rect key="frame" x="35" y="180" width="500" height="200"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4t-mN-O58" customClass="RoundButton" customModule="Countdown" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.10877574573863637" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="U4t-mN-O58" secondAttribute="height" multiplier="1:1" id="2q2-jh-VTA"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="Start"/>
+                                                        <connections>
+                                                            <action selector="tappedStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QbH-p8-pH1"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d21-Mw-QLa" customClass="RoundButton" customModule="Countdown" customModuleProvider="target">
+                                                        <rect key="frame" x="300" y="0.0" width="200" height="200"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.1087757457" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="d21-Mw-QLa" secondAttribute="height" multiplier="1:1" id="ap3-Qv-FWX"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="Stop"/>
+                                                        <connections>
+                                                            <action selector="tappedStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0J6-mY-3Xg"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="U4t-mN-O58" firstAttribute="top" secondItem="KCK-Ib-g9Y" secondAttribute="top" id="42f-rH-PZj"/>
+                                                    <constraint firstItem="d21-Mw-QLa" firstAttribute="top" secondItem="KCK-Ib-g9Y" secondAttribute="top" id="7Il-2C-VyU"/>
+                                                    <constraint firstAttribute="width" constant="500" id="DtQ-yy-xqD"/>
+                                                    <constraint firstItem="U4t-mN-O58" firstAttribute="leading" secondItem="KCK-Ib-g9Y" secondAttribute="leading" id="EaY-Mi-iU3"/>
+                                                    <constraint firstAttribute="bottom" secondItem="U4t-mN-O58" secondAttribute="bottom" id="TvD-oG-PbS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="d21-Mw-QLa" secondAttribute="trailing" id="aq9-0N-qmY"/>
+                                                    <constraint firstAttribute="height" constant="200" id="cd4-kR-9Nq"/>
+                                                    <constraint firstAttribute="bottom" secondItem="d21-Mw-QLa" secondAttribute="bottom" id="hTP-UE-Zek"/>
+                                                    <constraint firstItem="d21-Mw-QLa" firstAttribute="width" secondItem="d21-Mw-QLa" secondAttribute="height" multiplier="1:1" id="v2S-Fw-WUG"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.0" green="1" blue="0.042500058203223112" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="KCK-Ib-g9Y" firstAttribute="centerY" secondItem="3K6-cR-QGX" secondAttribute="centerY" id="UOQ-wf-Wex"/>
+                                            <constraint firstItem="KCK-Ib-g9Y" firstAttribute="centerX" secondItem="3K6-cR-QGX" secondAttribute="centerX" id="pea-8D-CIK"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="URG-G8-sc8" secondAttribute="bottom" id="BEo-8D-G2i"/>
+                            <constraint firstItem="URG-G8-sc8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="HIi-9J-Fni"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1nS-jv-Utn" secondAttribute="trailing" constant="100" id="OGl-j0-hZI"/>
+                            <constraint firstItem="URG-G8-sc8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="WLa-nt-djM"/>
                             <constraint firstItem="1nS-jv-Utn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="i1B-XL-dLJ"/>
                             <constraint firstItem="1nS-jv-Utn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mtj-FZ-jxW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="URG-G8-sc8" secondAttribute="trailing" id="yLY-hz-egj"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="countdownLabel" destination="1nS-jv-Utn" id="nCQ-7t-I8Z"/>
+                        <outlet property="scrollView" destination="URG-G8-sc8" id="2P6-0o-Rle"/>
+                        <outlet property="startButton" destination="U4t-mN-O58" id="42s-pJ-fgT"/>
+                        <outlet property="stopButton" destination="d21-Mw-QLa" id="oOL-xH-rrC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="470" y="372"/>
         </scene>
     </scenes>
 </document>

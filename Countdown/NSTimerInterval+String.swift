@@ -14,7 +14,7 @@ extension NSTimeInterval {
         let minutes = (Int(self) / 60) % 60
 
         if includeSeconds {
-            return String(format: "%02d.%02d", minutes, seconds)
+            return String(format: "%02d:%02d", minutes, seconds)
         } else {
             return String(format: "%02d", minutes)
         }
