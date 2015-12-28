@@ -35,7 +35,7 @@
                                                 <rect key="frame" x="35" y="180" width="500" height="200"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4t-mN-O58" customClass="RoundButton" customModule="Countdown" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                        <rect key="frame" x="150" y="0.0" width="200" height="200"/>
                                                         <color key="backgroundColor" white="1" alpha="0.10877574573863637" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="U4t-mN-O58" secondAttribute="height" multiplier="1:1" id="2q2-jh-VTA"/>
@@ -58,16 +58,33 @@
                                                             <action selector="tappedStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0J6-mY-3Xg"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRW-Hi-IlJ" customClass="RoundButton" customModule="Countdown" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                        <color key="backgroundColor" white="1" alpha="0.1087757457" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="xRW-Hi-IlJ" secondAttribute="height" multiplier="1:1" id="o6c-X6-hbk"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="Extend"/>
+                                                        <connections>
+                                                            <action selector="tappedExtend:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nfy-UQ-o4G"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="U4t-mN-O58" firstAttribute="top" secondItem="KCK-Ib-g9Y" secondAttribute="top" id="42f-rH-PZj"/>
                                                     <constraint firstItem="d21-Mw-QLa" firstAttribute="top" secondItem="KCK-Ib-g9Y" secondAttribute="top" id="7Il-2C-VyU"/>
                                                     <constraint firstAttribute="width" constant="500" id="DtQ-yy-xqD"/>
-                                                    <constraint firstItem="U4t-mN-O58" firstAttribute="leading" secondItem="KCK-Ib-g9Y" secondAttribute="leading" id="EaY-Mi-iU3"/>
+                                                    <constraint firstItem="U4t-mN-O58" firstAttribute="centerX" secondItem="KCK-Ib-g9Y" secondAttribute="centerX" id="F7p-cI-6ae"/>
+                                                    <constraint firstItem="xRW-Hi-IlJ" firstAttribute="width" secondItem="xRW-Hi-IlJ" secondAttribute="height" multiplier="1:1" id="JtO-Oz-w8X"/>
                                                     <constraint firstAttribute="bottom" secondItem="U4t-mN-O58" secondAttribute="bottom" id="TvD-oG-PbS"/>
                                                     <constraint firstAttribute="trailing" secondItem="d21-Mw-QLa" secondAttribute="trailing" id="aq9-0N-qmY"/>
                                                     <constraint firstAttribute="height" constant="200" id="cd4-kR-9Nq"/>
                                                     <constraint firstAttribute="bottom" secondItem="d21-Mw-QLa" secondAttribute="bottom" id="hTP-UE-Zek"/>
+                                                    <constraint firstItem="xRW-Hi-IlJ" firstAttribute="leading" secondItem="KCK-Ib-g9Y" secondAttribute="leading" id="haT-h0-6sK"/>
+                                                    <constraint firstItem="xRW-Hi-IlJ" firstAttribute="width" secondItem="xRW-Hi-IlJ" secondAttribute="height" multiplier="1:1" id="kMa-lD-j2D"/>
+                                                    <constraint firstAttribute="bottom" secondItem="xRW-Hi-IlJ" secondAttribute="bottom" id="kTB-RF-QV4"/>
+                                                    <constraint firstItem="xRW-Hi-IlJ" firstAttribute="top" secondItem="KCK-Ib-g9Y" secondAttribute="top" id="lds-TF-rJa"/>
                                                     <constraint firstItem="d21-Mw-QLa" firstAttribute="width" secondItem="d21-Mw-QLa" secondAttribute="height" multiplier="1:1" id="v2S-Fw-WUG"/>
                                                 </constraints>
                                             </view>
@@ -95,6 +112,7 @@
                     </view>
                     <connections>
                         <outlet property="countdownLabel" destination="1nS-jv-Utn" id="nCQ-7t-I8Z"/>
+                        <outlet property="extendButton" destination="xRW-Hi-IlJ" id="heQ-mN-ppB"/>
                         <outlet property="scrollView" destination="URG-G8-sc8" id="2P6-0o-Rle"/>
                         <outlet property="startButton" destination="U4t-mN-O58" id="42s-pJ-fgT"/>
                         <outlet property="stopButton" destination="d21-Mw-QLa" id="oOL-xH-rrC"/>

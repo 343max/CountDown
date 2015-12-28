@@ -16,13 +16,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var startButton: RoundButton!
     @IBOutlet weak var stopButton: RoundButton!
+    @IBOutlet weak var extendButton: RoundButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.countdownLabel.font = self.countdownLabel.font.monospacedDigitFont
-
-        self.countdownLabel.text = CountdownController.placeholder
         countdownController.delegate = self
 
         if let contentView = scrollView.subviews.first {
@@ -72,10 +71,21 @@ extension ViewController {
         countdownController.stop()
         hidePannel()
     }
+
+    @IBAction func tappedExtend(sender: AnyObject) {
+        countdownController.extend()
+    }
 }
 
 extension ViewController: CountDownControllerDelegate {
     func updateCountdown(countdownString: String) {
         self.countdownLabel.text = countdownString
+    }
+
+    func countdownStateChanged(newState: CountdownController.State) {
+        let hideStart = newState != .Idle
+        startButton.hidden = hideStart
+        stopButton.hidden = !hideStart
+        extendButton.hidden = !hideStart
     }
 }

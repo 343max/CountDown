@@ -10,15 +10,40 @@ import Foundation
 
 protocol CountDownControllerDelegate: class {
     func updateCountdown(countdownString: String)
+    func countdownStateChanged(newState: CountdownController.State)
 }
 
 class CountdownController {
-    static let placeholder = "WMR"
-    static let duration = NSTimeInterval(60 * 5)
-    var endDate: NSDate?
-    var timer: NSTimer?
+    enum State {
+        case Counting
+        case Idle
+    }
 
-    weak var delegate: CountDownControllerDelegate?
+    static let placeholder = "WMR"
+    static let duration = NSTimeInterval(5 * 60)
+    var endDate: NSDate? {
+        didSet {
+            state = endDate == nil ? .Idle : .Counting
+        }
+    }
+    var timer: NSTimer?
+    var state: State = .Idle {
+        didSet {
+            delegate?.countdownStateChanged(state)
+        }
+    }
+    var text = CountdownController.placeholder {
+        didSet {
+            delegate?.updateCountdown(text)
+        }
+    }
+
+    weak var delegate: CountDownControllerDelegate? {
+        didSet {
+            delegate?.countdownStateChanged(state)
+            delegate?.updateCountdown(text)
+        }
+    }
 
     func start() {
         endDate = NSDate(timeIntervalSinceNow: CountdownController.duration)
@@ -32,7 +57,12 @@ class CountdownController {
 
         endDate = nil
 
-        delegate?.updateCountdown(CountdownController.placeholder)
+        text = CountdownController.placeholder
+    }
+
+    func extend() {
+        endDate = endDate! + 60
+        tick(timer!)
     }
 
     @objc func tick(timer: NSTimer) {
@@ -43,6 +73,6 @@ class CountdownController {
             return
         }
 
-        delegate?.updateCountdown(timeLeft.formatedString(includeSeconds: true))
+        text = timeLeft.formatedString(includeSeconds: true)
     }
 }
