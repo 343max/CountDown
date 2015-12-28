@@ -40,7 +40,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="U4t-mN-O58" secondAttribute="height" multiplier="1:1" id="2q2-jh-VTA"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                         <state key="normal" title="Start"/>
                                                         <connections>
                                                             <action selector="tappedStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QbH-p8-pH1"/>
@@ -52,8 +52,10 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="d21-Mw-QLa" secondAttribute="height" multiplier="1:1" id="ap3-Qv-FWX"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="Stop"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                        <state key="normal" title="Stop">
+                                                            <color key="titleColor" red="1" green="0.0" blue="0.042985791671389606" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="tappedStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0J6-mY-3Xg"/>
                                                         </connections>
@@ -64,8 +66,10 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="xRW-Hi-IlJ" secondAttribute="height" multiplier="1:1" id="o6c-X6-hbk"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="Extend"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                        <state key="normal" title="Extend">
+                                                            <color key="titleColor" red="1" green="0.89576937104258669" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="tappedExtend:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nfy-UQ-o4G"/>
                                                         </connections>
